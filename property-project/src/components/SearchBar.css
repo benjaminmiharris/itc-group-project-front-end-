@@ -1,0 +1,22 @@
+.searchbar-container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.search-bar {
+  flex-direction: row;
+  align-items: center;
+  
+}
+
+.search-bar input {
+  margin-right: 10px;
+}
+.search-bar select {
+  margin-right: 10px;
+}
+.search-bar button {
+  padding: 5px 10px;
+}
