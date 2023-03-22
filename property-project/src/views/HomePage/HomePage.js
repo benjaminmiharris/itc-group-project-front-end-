@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import NavBar from '../components/NavBar';
-import './NavBar.css';
-import SearchBar from '../components/SearchBar';
+import React, { useState } from "react";
+import NavBar from "../../components/NavBar";
+import CardRental from "../../components/CardRental";
 
+import "./NavBar.css";
+import SearchBar from "../../components/SearchBar";
 
 function HomePage() {
   const [showSignup, setShowSignup] = useState(false);
@@ -14,22 +15,25 @@ function HomePage() {
   const handleCloseSignup = () => setShowSignup(false);
   const handleCloseLogin = () => setShowLogin(false);
 
-    // Close or Show window
-    window.onclick = function (event) {
-        const signupModal = document.querySelector('.modal');
-        const loginModal = document.querySelector('.modal');
-        if (event.target === signupModal) {
-          setShowSignup(false);
-        } else if (event.target === loginModal) {
-          setShowLogin(false);
-        }
-      };
+  // Close or Show window
+  window.onclick = function (event) {
+    const signupModal = document.querySelector(".modal");
+    const loginModal = document.querySelector(".modal");
+    if (event.target === signupModal) {
+      setShowSignup(false);
+    } else if (event.target === loginModal) {
+      setShowLogin(false);
+    }
+  };
 
   return (
     <div>
-      <NavBar handleSignupClick={handleSignupClick} handleLoginClick={handleLoginClick} />
-      <SearchBar/>
-
+      <NavBar
+        handleSignupClick={handleSignupClick}
+        handleLoginClick={handleLoginClick}
+      />
+      <SearchBar />
+      <CardRental />
 
       {showSignup && (
         <div className="modal">
@@ -77,6 +81,4 @@ function HomePage() {
   );
 }
 
-export default HomePage; 
-
-
+export default HomePage;
