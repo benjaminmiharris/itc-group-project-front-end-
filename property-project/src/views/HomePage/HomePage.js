@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import NavBar from "../../components/NavBar";
+// import NavBar from "../../components/NavBar";
 import CardRental from "../../components/CardRental";
 
-import "./NavBar.css";
+// import "./NavBar.css";
 import SearchBar from "../../components/SearchBar";
 
 function HomePage() {
@@ -28,10 +28,10 @@ function HomePage() {
 
   return (
     <div>
-      <NavBar
+      {/* <NavBar
         handleSignupClick={handleSignupClick}
         handleLoginClick={handleLoginClick}
-      />
+      /> */}
       <SearchBar />
       <CardRental />
 
