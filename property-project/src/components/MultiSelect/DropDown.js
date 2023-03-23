@@ -1,7 +1,7 @@
 import Dropdown from "react-bootstrap/Dropdown";
 
-function DropDown({ items, defaultLabel }) {
-  const dropdownStyle = { backgroundColor: "#007E8B" };
+function DropDown({ items, defaultLabelText, labelBackgroundColor }) {
+  const dropdownStyle = { backgroundColor: labelBackgroundColor };
 
   return (
     <>
@@ -11,7 +11,7 @@ function DropDown({ items, defaultLabel }) {
           className="drop-down-option"
           style={dropdownStyle}
         >
-          {defaultLabel}
+          {defaultLabelText}
         </Dropdown.Toggle>
 
         <Dropdown.Menu>

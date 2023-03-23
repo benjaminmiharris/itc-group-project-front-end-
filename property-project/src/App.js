@@ -8,11 +8,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        {/* <Route path="/" element={<HomePage />} /> */}
-        <Route path="/search" element={<SearchPage />} />
-        <Route path="/search/:id" element={<PropertyDetailsPage />} />
-      </Routes>
+      <div className="main-content">
+        <Routes>
+          {/* <Route path="/" element={<HomePage />} /> */}
+          <Route path="/search" element={<SearchPage />} />
+          <Route path="/search/:id" element={<PropertyDetailsPage />} />
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 }
