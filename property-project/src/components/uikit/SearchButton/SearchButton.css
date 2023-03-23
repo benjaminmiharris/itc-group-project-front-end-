@@ -1,0 +1,13 @@
+.search-button {
+    padding: 6px;
+    border: 2px solid black;
+    color: white;
+    background-color: #007e8b;
+    min-width: 150px;
+    height: 40px;
+    border-radius: 80px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+    cursor: pointer;
+}

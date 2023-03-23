@@ -1,0 +1,9 @@
+.container {
+    justify-content: center;
+    margin: 50px 150px auto;
+
+}
+
+.search-results-container {
+    margin: 0 20px  auto;
+}
