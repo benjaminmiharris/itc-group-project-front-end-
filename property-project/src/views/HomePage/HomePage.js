@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-// import NavBar from "../../components/NavBar";
-import CardRental from "../../components/CardRental";
-
-// import "./NavBar.css";
-import SearchBar from "../../components/SearchBar";
+import CardRental from "../../components/CardRental/CardRental";
+import SearchBar from "../../components/SearchBar/SearchBar";
+import NavBar from "../../components/NavBar/NavBar";
 
 function HomePage() {
   const [showSignup, setShowSignup] = useState(false);
@@ -28,11 +26,10 @@ function HomePage() {
 
   return (
     <div>
-      {/* <NavBar
+      <NavBar
         handleSignupClick={handleSignupClick}
         handleLoginClick={handleLoginClick}
-      /> */}
-      <SearchBar />
+      />
       <CardRental />
 
       {showSignup && (

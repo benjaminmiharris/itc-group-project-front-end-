@@ -1,0 +1,10 @@
+.sortby-dropdown {
+    background-color: #5b5c65;
+    color: white;
+    width: 150px;
+    height: 40px;
+    border-radius: 50px;
+    font-size: 18px;
+    text-align: center;
+    border-style: none;
+}

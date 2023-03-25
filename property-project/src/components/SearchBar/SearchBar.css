@@ -1,0 +1,17 @@
+
+.search-bar {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+
+.search-bar input {
+  margin-right: 10px;
+}
+.search-bar select {
+  margin-right: 10px;
+}
