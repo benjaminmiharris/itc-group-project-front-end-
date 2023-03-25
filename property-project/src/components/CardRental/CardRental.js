@@ -32,7 +32,7 @@ function CardRental(props) {
   } = props;
 
   return (
-    <Card className="mb-3">
+    <Card className="card">
       <Card.Img variant="top" src={image} />
       <Card.Body>
         <Card.Title>{address}</Card.Title>

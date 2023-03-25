@@ -1,0 +1,12 @@
+.line {
+    display: flex;
+    gap: 10px;
+}
+
+.line.between {
+    justify-content: space-between;
+}
+
+.line.rows {
+    flex-direction: column;
+}
