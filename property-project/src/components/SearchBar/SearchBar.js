@@ -38,33 +38,32 @@ class SearchBar2 extends Component {
      
           <form onSubmit={this.handleSearchSubmit} className='search-bar'>
               <Column>
-              <Input
-                type='text'
-                placeholder='Please enter city, zip code, area, ...'
-                value={this.state.searchTerm}
-                onChange={this.handleSearchTermChange}
-              />
+                <Input
+                  type='text'
+                  placeholder='Please enter city, zip code, area, ...'
+                  value={this.state.searchTerm}
+                  onChange={this.handleSearchTermChange}
+                />
               </Column>
               <Column>
-              <HomeTypeDropdown value={this.state.rentalType} onChange={this.handleRentalTypeChange}>
-                <option value='home'>Home</option>
-                <option value='apartment'>Apartment</option>
-              </HomeTypeDropdown>
+                <HomeTypeDropdown value={this.state.rentalType} onChange={this.handleRentalTypeChange}>
+                  <option value='home'>Home</option>
+                  <option value='apartment'>Apartment</option>
+                </HomeTypeDropdown>
               </Column>
               <Column>
-              <PriceDropdown value={this.state.price} onChange={this.handlePriceChange}>
-                <option value='00-500'>00 - 500 $</option>
-                <option value='501-1000'>501 - 1000 $</option>
-                <option value='1001-1500'>1001 - 1500 $</option>
-                <option value='1501-2000'>1501 - 2000 $</option>
-                <option value='2001-2500'>2001 - 2500 $</option>
-                <option value='2501-3000'>2501 - 3500 $</option>
-                <option value='plus'>+</option>
-              </PriceDropdown>
+                <PriceDropdown value={this.state.price} onChange={this.handlePriceChange}>
+                  <option value='00-500'>00 - 500 $</option>
+                  <option value='501-1000'>501 - 1000 $</option>
+                  <option value='1001-1500'>1001 - 1500 $</option>
+                  <option value='1501-2000'>1501 - 2000 $</option>
+                  <option value='2001-2500'>2001 - 2500 $</option>
+                  <option value='2501-3000'>2501 - 3500 $</option>
+                  <option value='plus'>+</option>
+                </PriceDropdown>
               </Column>
               <Column>
-
-              <SearchButton type='submit'>Search</SearchButton>
+                <SearchButton type='submit'>Search</SearchButton>
               </Column>
 
           </form>

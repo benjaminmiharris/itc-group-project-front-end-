@@ -1,7 +1,6 @@
 .grid {
     display: grid;
-    height: 100%;
-    grid-template-rows: 60px 1fr 45px;
+    grid-template-rows:  2 auto repeat();
 }
 
 .grid>* {

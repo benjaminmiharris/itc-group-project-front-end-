@@ -1,6 +1,6 @@
 .column {
     margin: 15px 0 auto;
-    width: max-content;
+    width: fit-content;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }

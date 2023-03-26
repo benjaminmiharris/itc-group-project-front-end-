@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "./SearchPage.css";
 import DropDown from "../../components/MultiSelect/DropDown";
 import Container from "react-bootstrap/Container";
@@ -6,40 +6,94 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import InputText from "../../components/InputUI/InputText";
 import PrimaryBtn from "../../components/Buttons/ActionButton/PrimaryBtn";
-import SearchBar from "../../components/SearchBar/SearchBar";
+import SearchBar2 from "../../components/SearchBar/SearchBar";
 import Header from "../../components/uikit/Header/Header"
-import SortByDropdown from "../../components/uikit/Dropdowns/SortByDropdown/SortByDropdown";
-import Column from "../../components/uikit/Column/Column";
-import CardRental from "../../components/CardRental/CardRental";
 import Card from "../../components/uikit/Card/Card";
+import Listings from "../../components/Listings/Listings";
+import SearchResults from "../../components/uikit/SearchResults/SearchResults";
+import LoginButton from "../../components/Buttons/LoginButton/LoginButton";
 
 const SearchPage = () => {
-  const items = ["item 1", "item 2", "item 3"];
+
+  const [showSignup, setShowSignup] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
+
+  const handleSignupClick = () => setShowSignup(true);
+  const handleLoginClick = () => setShowLogin(true);
+
+  const handleCloseSignup = () => setShowSignup(false);
+  const handleCloseLogin = () => setShowLogin(false);
+
+  // Close or Show window
+  window.onclick = function (event) {
+    const signupModal = document.querySelector(".modal");
+    const loginModal = document.querySelector(".modal");
+    if (event.target === signupModal) {
+      setShowSignup(false);
+    } else if (event.target === loginModal) {
+      setShowLogin(false);
+    }
+  };
 
   return (
     <>
       <Container className="search-page-container">
-        <Header/>
+        <Header />
+
         <Row className="search-bar-filter">
-          <SearchBar />
+          <SearchBar2 />
         </Row>
         <Row className="result-summary">
-          <Column>
-            <p className="total-listings"><strong>1,380 Rental Listings</strong></p>
-            <p className="total-listings-paginatation"><strong>Showing 8 - 50 results</strong></p>
-          </Column>
-          <Column>
-            <SortByDropdown
-              items={items}
-              defaultLabelText={"sort by"}
-              labelBackgroundColor={"#007E8B"}
-            />
-          </Column>
+          <Listings />
         </Row>
         <Row className="search-results">
-          <Card/>
+          <SearchResults />
         </Row>
       </Container>
+
+      {showSignup && (
+        <div className="modal">
+          <div className="modal-content">
+            <span className="close" onClick={handleCloseSignup}>
+              &times;
+            </span>
+            <h2>WELCOME</h2>
+            <form>
+              <label>Email:</label>
+              <input type="email" required />
+              <label>Password:</label>
+              <input type="password" required />
+              <label>Confirm Password:</label>
+              <input type="password" required />
+              <div>
+                <input type="checkbox" required />
+                <label>I am a realtor or industry professional </label>
+              </div>
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {showLogin && (
+        <div className="modal">
+          <div className="modal-content">
+            <span className="close" onClick={handleCloseLogin}>
+              &times;
+            </span>
+            <h2>WELCOME</h2>
+            <form>
+              <label>Email:</label>
+              <input type="email" required />
+              <label>Password:</label>
+              <input type="password" required />
+              <button type="submit">Login</button>
+            </form>
+            <a href="#">Forgot Your Password?</a>
+          </div>
+        </div>
+      )}
+      
     </>
   );
 };
