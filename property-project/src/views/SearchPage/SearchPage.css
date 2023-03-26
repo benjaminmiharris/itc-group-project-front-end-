@@ -1,44 +1,50 @@
 .search-page-container {
-  justify-content: space-around;
   margin: 0 auto;
   margin-top: 50px;
-  width: 100%;
 
 }
 
 .search-bar-filter {
   background-color: red;
-  height: 130px;
+  height: 100px;
 }
 
 .result-summary {
   background-color: yellow;
-  height: 100px;
+  height: 80px;
 }
 
 .search-results {
-  background-color: green;
+  /* background-color: green; */
   height: 500px;
   justify-content: space-evenly;
-  padding: 20px 0;
-  
+  padding: 50px 50px;
 }
 
-.total-listings {
-  font-size: 24px;
-  font-weight: 400;
-}
-
-.total-listings-paginatation {
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 0em;
-  text-align: left;
+@media only screen and (max-width: 1000px) {
+  /* For mobile phones: */
+  [class*="search-bar-filter"] {
+    height: 150px;
+  }
 }
 
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
   [class*="search-bar-filter"] {
     height: 200px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  /* For mobile phones: */
+  [class*="result-summary"] {
+    height: 90px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="result-summary"] {
+    height: 130px;
   }
 }
