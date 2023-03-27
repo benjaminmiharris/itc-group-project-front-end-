@@ -1,19 +1,23 @@
 .listings {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
+}
+
+.total-listings-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .total-listings {
-    font-size: 24px;
-    font-weight: 700;
-  }
-  
-  .total-listings-pagination {
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 0em;
-    text-align: left;
-  }
+  font-size: 24px;
+  font-weight: 700;
+}
 
-  
+.total-listings-pagination {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0em;
+  text-align: left;
+}
