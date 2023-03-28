@@ -6,7 +6,7 @@ import './IconDropdown.css'
 const IconDropdown = () => {
 
   return (
-    <div className='flex flex-col'>
+    <div className='dropdown-container'>
         <ul className='dropdown'>
             <li><a href='#'>Profile</a></li>
             <li><a href='#'>Settings</a></li>
