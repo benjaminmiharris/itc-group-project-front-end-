@@ -5,12 +5,13 @@
 }
 
 .search-bar-filter {
-  background-color: red;
+  /* background-color: red; */
   height: 100px;
+  margin-bottom: 50px;
 }
 
 .result-summary {
-  background-color: yellow;
+  /* background-color: yellow; */
   height: 80px;
 }
 
@@ -42,9 +43,3 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
-  /* For mobile phones: */
-  [class*="result-summary"] {
-    height: 130px;
-  }
-}

@@ -6,7 +6,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import InputText from "../../components/InputUI/InputText";
 import PrimaryBtn from "../../components/Buttons/ActionButton/PrimaryBtn";
-import SearchBar2 from "../../components/SearchBar/SearchBar";
+import SearchBar from "../../components/SearchBar/SearchBar";
 import Header from "../../components/uikit/Header/Header"
 import Card from "../../components/uikit/Card/Card";
 import Listings from "../../components/Listings/Listings";
@@ -41,7 +41,7 @@ const SearchPage = () => {
         <Header />
 
         <Row className="search-bar-filter">
-          <SearchBar2 />
+          <SearchBar />
         </Row>
         <Row className="result-summary">
           <Listings />
