@@ -27,7 +27,7 @@ ul {
     text-align: center;
 }
 
-li {
+.dropdown li {
     list-style: none;
     margin: 20px;
     border: 2px solid black;
@@ -46,7 +46,19 @@ li:hover {
     background-color: black;
 }
 
-li a {
+li button {
     color: white;
     text-decoration: none;
+}
+
+.dropdown-button {
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+.dropdown-button:hover {
+    background-color: black;
+    border: none;
+    color: white;
 }

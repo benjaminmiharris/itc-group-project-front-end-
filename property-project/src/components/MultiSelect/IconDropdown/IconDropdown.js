@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './IconDropdown.css'
 
 
@@ -8,9 +8,9 @@ const IconDropdown = () => {
   return (
     <div className='dropdown-container'>
         <ul className='dropdown'>
-            <li><a href='#'>Profile</a></li>
-            <li><a href='#'>Settings</a></li>
-            <li><a href='#'>Logout</a></li>
+            <li><button className='dropdown-button'>Profile</button></li>
+            <li><button className='dropdown-button'>Settings</button></li>
+            <li><button className='dropdown-button'>Logout</button></li>
         </ul>
 
     </div>

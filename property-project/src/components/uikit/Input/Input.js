@@ -1,9 +1,9 @@
 import React from 'react'
 import "./Input.css"
 
-const Input = () => {
+const Input = ({ inputType, placeholderText}) => {
   return (
-    <input className='input' placeholder='Please enter city, zip code, area, ...'
+    <input className='input' type={inputType} placeholder={placeholderText}
     
     />
   )

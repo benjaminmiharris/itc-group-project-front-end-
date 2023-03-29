@@ -1,0 +1,44 @@
+.actBtns {
+    width: 50%;
+    height: 40px;
+    background-color: royalblue;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    position:relative;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+}
+
+.actBtn {
+    margin: 0 auto;
+    width: 50%;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-radius: 50px;
+    color: white;
+    font-size: .8em;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.moveBtn {
+    position: absolute;
+    width: 50%;
+    height: 90%;
+    margin: 2px;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    background-color: white;
+    font-size: .8em;
+    font-weight: 700;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+}
+
+.rightBtn{
+    transform: translateX(96%);
+    transition: all 0.2s ease-in-out;
+}

@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import "./LoginButton.css"
 
-const LoginButton = ({ handleLoginClick }) => {
+const LoginButton = ({ handleShowLogin }) => {
    
 
   return (
@@ -9,7 +9,7 @@ const LoginButton = ({ handleLoginClick }) => {
         <button 
             className='login-button' 
             type='submit'  
-            onClick={handleLoginClick}
+            onClick={handleShowLogin}
         >
             Login
         </button>  

@@ -44,3 +44,90 @@
     top: 3.5rem;
     right: .5rem;   
 }
+
+.modal-content {
+    margin: 0 auto;
+    padding: 0;
+    border-radius: 60px;
+    justify-content: center;
+}
+
+.modal-form {
+    margin: 20px 0 auto;
+}
+
+.modal-form:nth-last-child() {
+    margin: 60px;
+}
+
+a {
+    color:  #007e8b;
+    text-decoration: none;
+    text-align: center;
+    margin: 20px;
+    font-size: 25px;
+}
+
+.input {
+    margin: 20px 20px auto;
+}
+
+
+.input-labels {
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 25px;
+    margin: 20px 0 auto;
+}
+
+.forgot-password {
+    color: #007e8b;
+    text-decoration: none;
+  }
+
+  .forgot-password:hover {
+    color: #020294;
+    text-decoration: none;
+  }
+
+  .login-footer {
+    background: none;
+    border: none;
+    color: #0000FF;
+    font-weight: 700;
+  }
+
+  .login-footer:hover {
+    text-decoration: underline;
+    font-weight: 700;
+    color: #020294;
+    background-color: transparent;
+  }
+
+  .signup-footer {
+    background: none;
+    border: none;
+    color: #0000FF;
+    font-weight: 700;
+  }
+
+  .signup-footer:hover {
+    text-decoration: underline;
+    color: #020294;
+    background-color: transparent;
+    font-weight: 700;
+  }
+
+  .checkbox {
+    margin: 20px;
+  }
+
+  .modal-footer {
+    margin: 0 auto;
+  }
+
+  .button {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+  }

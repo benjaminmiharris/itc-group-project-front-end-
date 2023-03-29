@@ -39,8 +39,8 @@ class SearchBar2 extends Component {
           <form onSubmit={this.handleSearchSubmit} className='search-bar'>
               <Column>
                 <Input
-                  type='text'
-                  placeholder='Please enter city, zip code, area, ...'
+                  type='inputType'
+                  placeholderText='Please enter city, zip code, area, ...'
                   value={this.state.searchTerm}
                   onChange={this.handleSearchTermChange}
                 />
