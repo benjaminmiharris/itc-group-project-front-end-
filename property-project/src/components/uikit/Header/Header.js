@@ -10,10 +10,9 @@ import Input from '../Input/Input'
 import { Modal, ModalBody, Form, Alert } from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
-import ToggleButton from '../../Buttons/ToggleButton/ToggleButton'
 
 
-const Header = ( { inputType, placeholderText }) => {
+const Header = () => {
   const [openProfile, setOpenProfile] = useState(false)
 
   const ref = useRef()
@@ -23,15 +22,11 @@ const Header = ( { inputType, placeholderText }) => {
     lastName: '',
     email: '',
     password: '',
-    passwordConfirm: '',
-    phoneNumber: ''
+    confirmPassword: '',
+    phoneNumber: '',
+    mobile: '',
+    role: ''
   })
-
-
-  const passwordRef = useRef()
-  const passwordConfirmRef = useRef()
-  const phoneNumberRef = useRef()
-
 
   const handleChange = (e) => {
     setInputs(prev => ({
@@ -40,6 +35,7 @@ const Header = ( { inputType, placeholderText }) => {
     }))
   }
 
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [error, setError] = useState('')
   const navigate = useNavigate()  
 
@@ -65,24 +61,25 @@ const Header = ( { inputType, placeholderText }) => {
   }
 
   const createUser = async () => {
-    const res = await axios.post('http://localhost:5000/api/auth/signup/', {
-        name: {
-            firstName: inputs.firstName,
-            lastName: inputs.lastName
-        },
+    const res = await axios.post('http://localhost:3002/signup/', {
+        firstName: inputs.firstName,
+        lastName: inputs.lastName,
         email: inputs.email,
         password: inputs.password,
-        phoneNumber: inputs.phoneNumber
+        confirmPassword: inputs.confirmPassword,
+        mobile: inputs.mobile,
+        role: inputs.role
     }).catch(err => console.log(err));
     const data = await res.data;
+    console.log(data)
     return data;
 }
 
 
 const loginUser = async () => {
-    const res =  await axios.post('http://localhost:5000/api/auth/login', {
+    const res =  await axios.post('http://localhost:3002/login', {
         email: inputs.email,
-        password: inputs.password
+        password: inputs.password,
     }).catch(err => console.log(err));
     const data = await res.data;
     console.log(data)
@@ -90,7 +87,29 @@ const loginUser = async () => {
 }
 
   
+const handleLogin = (e) => {
+  e.preventDefault();
+  try {
+    loginUser();
+    handleCloseLogin();
+    navigate('/search');
+    setIsLoggedIn(true);
 
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+const handleSignup = (e) => {
+  e.preventDefault();
+  try {
+    createUser();
+    handleCloseRegister();
+    navigate('/search');
+  } catch (err) {
+    console.log(err)
+  }
+}
 
 
  
@@ -113,24 +132,28 @@ const loginUser = async () => {
       <div className='header'>
           <img src={img2} alt='house-icon' className='house-icon' />
           <div className='login-user'>
-            <div className='login'>
-              <LoginButton handleShowLogin={handleShowLogin}  /> {/* this needs to be set if not logged in */}
-
-            </div>
-            <div className='user' ref={ref}> {/* this needs to be set if not logged in */}
-              <FontAwesomeIcon 
-                icon={faUser} 
-                className='user-icon' 
-                onClick={() => setOpenProfile ((prev) => !prev)} 
-              />
-              {
-                openProfile && (
-                  <div className='dropdown-container'>
-                    <IconDropdown />
-                  </div>
-                )
-              } 
-            </div>
+            { isLoggedIn 
+              ?
+                <div className='user' ref={ref}> {/* this needs to be set if not logged in */}
+                <FontAwesomeIcon 
+                  icon={faUser} 
+                  className='user-icon' 
+                  onClick={() => setOpenProfile ((prev) => !prev)} 
+                />
+                  {
+                    openProfile && (
+                      <div className='dropdown-container'>
+                        <IconDropdown />
+                      </div>
+                    )
+                  } 
+                </div>
+              
+              : 
+                <div className='login'>
+                  <LoginButton handleShowLogin={handleShowLogin}  /> {/* this needs to be set if not logged in */}
+                </div>
+            }
           </div>
           <Modal 
             className='modal' 
@@ -142,17 +165,26 @@ const loginUser = async () => {
                 <h2 className='text-center mb-4'>Signup</h2>
                 {error && <Alert variant='danger'>{error}</Alert>}
                 <Form className='modal-form'>
+                    <label className='input-labels'>First Name</label>
+                    <Input inputType="text" name='firstName' className='input' onChange={handleChange} placeholderText={'Enter First Name'} required />
+                    <label className='input-labels'>Last Name</label>
+                    <Input inputType="text" name='lastName' className='input' onChange={handleChange} placeholderText={'Enter Last Name'} required />
                     <label className='input-labels'>Email</label>
-                    <Input type="email" className='input' placeholderText={'Enter Email'} required />
+                    <Input inputType="email" name='email' className='input' onChange={handleChange} placeholderText={'Enter Email'} required />
                     <label className='input-labels'>Password</label>
-                    <Input type="password" className='input' placeholderText='Enter Password' required />
+                    <Input inputType="password" name='password' className='input' onChange={handleChange} placeholderText={'Enter Password'} required />
                     <label className='input-labels'>Confirm Password</label>
-                    <Input type="password" className='input' placeholderText='Enter Password Again' required />
+                    <Input inputType="password" name='confirmPassword' className='input' onChange={handleChange} placeholderText={'Enter Password Again'} required />
+                    <label className='input-labels'>Phone Number</label>
+                    <Input inputType="text" name='mobile' className='input' onChange={handleChange} placeholderText={'Enter Phone Number'} required />
+                    <label className='input-labels'>Are you a Buyer or Seller?</label>
+                    <Input inputType="text" name='role' className='input' onChange={handleChange} placeholderText='Enter Password Again' required />
+                    
                     <div>
-                      <input type="checkbox" className='checkbox' required />
+                      <input type="checkbox" className='checkbox'  />
                       <label>I am a realtor or industry professional </label>
                     </div>
-                    <div className='button'><SignupButton /></div>
+                    <div className='button' onClick={handleSignup}><SignupButton /></div>
                   </Form>
                   <div className='modal-footer'>
                     <strong>Already a member? </strong>
@@ -174,10 +206,10 @@ const loginUser = async () => {
                 {error && <Alert variant='danger'>{error}</Alert>}
                   <Form className='modal-form'>
                       <label className='input-labels'>Email</label>
-                      <Input type="email" className='input' placeholderText={'Enter Email'} required />
+                      <Input inputType="email" name="email" className='input' onChange={handleChange} placeholderText={'Enter Email'} required />
                       <label className='input-labels'>Password</label>
-                      <Input type="password" className='input' placeholderText='Enter Password' required />
-                      <div className='button'><LoginButton /></div>
+                      <Input inputType="password" name="password" className='input' onChange={handleChange} placeholderText='Enter Password' required />
+                      <div className='button' onClick={handleLogin}><LoginButton /></div>
                       
                   </Form>
                   <a href="#" className='forgot-password'>Forgot Your Password?</a>

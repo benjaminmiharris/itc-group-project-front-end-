@@ -23,6 +23,7 @@ function AddRental() {
   const [internet, setInternet] = useState("");
   const [availability, setAvailability] = useState(null);
   const [extraInfo, setExtraInfo] = useState("");
+  const [selectedDate, setSelectedDate] = useState("");
 
   const handlePriceChange = (event) => {
     setPrice(event.target.value);
@@ -223,7 +224,7 @@ function AddRental() {
 
         <Form.Group controlId="laundry">
           <Form.Label>Laundry</Form.Label>
-          <Form.Control as="select" value={laundy} onChange={handleLaundryChange}>
+          <Form.Control as="select" value={laundry} onChange={handleLaundryChange}>
             <option value="yes">Yes</option>
             <option value="no">No</option>
           </Form.Control>

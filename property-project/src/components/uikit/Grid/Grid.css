@@ -1,19 +1,15 @@
 .grid {
-    display: grid;
-    grid-template-rows:  2 auto repeat();
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: auto;
+    grid-template-rows:  2 auto repeat(1fr);
 }
 
 .grid>* {
-    padding: 10px;
-}
-
-.grid>:nth-child(1) {
-    background-color: #333;
-    color: #fff;
-}
-.grid>:nth-child(2) {
-    background-color: green;
-}
-.grid>:nth-child(3) {
-    background-color: #e1e1d1;
+    display: flex;
+    margin: 0 auto;
+    padding: 0;
+    justify-content: space-around;
+    align-items: center;
 }
