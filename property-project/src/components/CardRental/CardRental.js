@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Card, Button } from "react-bootstrap";
+import { Modal, Card, Button } from "react-bootstrap";
 import DatePicker from "react-datepicker"; // for calendrer
 import "react-datepicker/dist/react-datepicker.css";
 

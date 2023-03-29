@@ -8,7 +8,8 @@ const CardContainer = () => {
         <Grid>
             <Card />
             <Card />
-            <Card />        
+            <Card />
+            <Card />
         </Grid> 
     </>
   )

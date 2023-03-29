@@ -1,5 +1,5 @@
 import React from 'react'
-import CardContainer from '../../CardsContainer/CardContainer'
+import CardContainer from '../../CardContainer/CardContainer'
 
 const SearchResults = () => {
   return (
