@@ -3,7 +3,6 @@ import "./SearchPage.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import SearchBar from "../../components/SearchBar/SearchBar";
-import Header from "../../components/uikit/Header/Header"
 import Listings from "../../components/Listings/Listings";
 import SearchResults from "../../components/uikit/SearchResults/SearchResults";
 
@@ -13,8 +12,7 @@ const SearchPage = () => {
   return (
     <>
       <Container className="search-page-container">
-        <Header />
-
+        
         <Row className="search-bar-filter">
           <SearchBar />
         </Row>

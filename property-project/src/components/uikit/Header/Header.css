@@ -1,12 +1,13 @@
 .header {
     position: relative;
     margin: 0;
-    padding: 0;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
 }
 
 .house-icon {
+    margin: 23px;
     width: 70px;
     height: 70px;
 }
@@ -41,7 +42,7 @@
 
 .dropdown-container {
     position: absolute;
-    top: 3.5rem;
+    top: 4.1rem;
     right: .5rem;   
 }
 

@@ -1,26 +1,27 @@
+.dropdown-container {
+    position: absolute;
+    z-index: 1;
+}
 
 .dropdown {
-    
     width: 220px;
     padding: 0 5px;
     border-radius: 15px;
     background-color: white;
-    border: 3px solid gray;
-    
-
+    border: 3px solid #5b5c65;
 }
 
 .dropdown::before {
     position: absolute;
     content: '';
-    top: -.95rem;
-    left: 10.6rem;
+    top: -.9rem;
+    left: 9.5rem;
     width: 25px;
     height: 25px;
     background-color: white;
     transform: rotate(45deg);
-    border-left: 3px solid gray;
-    border-top: 3px solid gray;
+    border-left: 3px solid #5b5c65;
+    border-top: 3px solid #5b5c65;
 }
 
 ul {
