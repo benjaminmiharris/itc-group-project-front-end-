@@ -79,7 +79,7 @@ const Header = () => {
 const loginUser = async () => {
     const res =  await axios.post('http://localhost:3002/login', {
         email: inputs.email,
-        password: inputs.password,
+        password: inputs.password
     }).catch(err => console.log(err));
     const data = await res.data;
     console.log(data)
@@ -92,7 +92,7 @@ const handleLogin = (e) => {
   try {
     loginUser();
     handleCloseLogin();
-    navigate('/search');
+    navigate('/');
     setIsLoggedIn(true);
 
   } catch (err) {
@@ -105,7 +105,7 @@ const handleSignup = (e) => {
   try {
     createUser();
     handleCloseRegister();
-    navigate('/search');
+    navigate('/');
   } catch (err) {
     console.log(err)
   }
@@ -121,9 +121,11 @@ const handleSignup = (e) => {
     }
     document.addEventListener('mousedown', checkIfClickedOutside)
 
+
     return () => {
       document.removeEventListener('mousedown', checkIfClickedOutside)
     }
+
   }, [openProfile])
 
 
@@ -134,7 +136,7 @@ const handleSignup = (e) => {
           <div className='login-user'>
             { isLoggedIn 
               ?
-                <div className='user' ref={ref}> {/* this needs to be set if not logged in */}
+                <div className='user' ref={ref}>
                 <FontAwesomeIcon 
                   icon={faUser} 
                   className='user-icon' 
@@ -151,7 +153,7 @@ const handleSignup = (e) => {
               
               : 
                 <div className='login'>
-                  <LoginButton handleShowLogin={handleShowLogin}  /> {/* this needs to be set if not logged in */}
+                  <LoginButton handleShowLogin={handleShowLogin} />
                 </div>
             }
           </div>
